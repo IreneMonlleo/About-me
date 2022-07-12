@@ -1,0 +1,129 @@
+html{
+    font-size: 100%;
+}
+
+
+body{
+    background-color:$color-graylight ; 
+    height: 0%; 
+
+}
+
+.container__header{
+
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    max-width: 100%;
+    position: relative;
+    margin-bottom: 120px;
+    margin-top: 20vh;
+}
+
+
+.hello{
+    @include icons (3em);
+    display:flex;
+    color:$color-graydark;
+    transition: rotate 1s;
+    margin: $space-medium;
+    
+    animation: greet 3s infinite;
+}
+@keyframes greet{    //Animation hand//
+    0%{
+        transform:rotate(-30deg);
+    }
+    50%{
+        transform:rotate(20deg);
+    }
+    100%{
+        transform:rotate(-30deg);
+    }
+}
+
+.front-page{
+    position: relative;
+    margin-bottom: 50px;
+    
+    &__container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        &--imag{
+            display: inline-block;
+            position: relative;
+            text-align: end;
+            margin-bottom: 20px;
+  
+            &::before {
+                content: "";
+                position: absolute;
+                top: 40px;
+                left: -100vw;
+                right: 20px;
+                bottom: -40px;
+                background-color: $color-main;
+                z-index: -1;
+            }
+        }
+    }
+}
+
+
+
+
+//------------------------> BREAK TABLET <-----------------------------------//
+@include media(sm){
+    .container__header{
+        overflow-y: hidden;
+        justify-content: center;
+    }
+
+}
+//-----------------------> BREAK MEDIUM <-------------------------------------//@each $
+
+@include media (md){
+   
+   .container__header{
+       justify-content: center;
+   }
+    .hello{
+        @include icons(4em);
+    }
+}
+
+    
+//------------------------> BREAK DESKTOP <-----------------------------------//
+
+@include media(lg) {
+    .hello{
+        @include icons (6em);
+    }
+    .container__header{
+        margin-bottom: 200px;
+        margin-top: 0px;
+    }
+    
+    .front-page__container{
+        flex:1;
+        margin-bottom: 200px;
+      
+    }
+    .front-page__container--imag{
+        flex:2;
+    }
+    .text-aboutme{
+        flex:2;
+        margin-right: 100px;
+    }
+    .skills__container{
+        height: 40vh;
+    }
+    .contact{
+        height: 100vh;
+    }
+}
+
+
+

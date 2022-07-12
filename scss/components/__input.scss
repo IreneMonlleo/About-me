@@ -1,0 +1,116 @@
+//------------------------------------> CONTACT <-------------------------------------------//
+
+.contact{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    
+    .icons{
+        @include icons (2em);
+    }
+    
+    .icons__contact-small{
+        display:flex;
+        justify-content: center;
+      
+       
+    }
+
+    .icons__contact{
+        display:flex;
+        align-items: center;
+        color:$color-main;
+        padding: $space-small;
+        
+    }
+
+    .message{
+        height: 20vh;
+    }    
+
+    input{
+        display:block;
+        width: 60vw;
+        padding:$space-small;
+        margin-bottom: $space-small;
+        background-color: $color-graydark;
+        border: none;
+        font-family: $fontfamily;
+        color:$color-graylight;
+        outline: none;
+
+        & :checked ~ p{
+            color:$color-graylight;
+        }
+
+        &:focus {
+            border:$color-main 5px solid ;
+            background-color:$color-white;
+            color:$color-graydark;
+        }
+            
+     
+
+
+    }
+        
+       
+    
+    [type="submit"]{
+        background-image:linear-gradient($degraded) ;
+        @include fontstyle ( 14px, $color-graydark, $bold);
+        border:none;
+        color: $color-graydark;
+        margin-bottom: $space-verybig;
+        width: 100%;
+        &:focus{
+            border: none;
+        }
+    
+    }
+
+    
+}
+//---------------------> BREAK <-------------------------//
+@include media(lg){
+    .icons{
+        @include icons (3em);
+    }
+
+    .icons__contact-container{
+        display: flex;
+        margin:$space-verybig;
+    }
+
+    .input-small{
+        display:flex;
+        width:10%;
+    }
+
+    [type="submit"]{
+        @include fontstyle ( 24px, $color-graydark, $bold);
+        height: 60px;
+    }
+    
+}
+
+
+
+    
+    
+    
+    
+   
+        
+
+
+
+
+
+
+    
+
+   
